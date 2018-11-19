@@ -3,7 +3,7 @@
  * @version 1.0.0
  */
 try {
-	(function(isNaN, isFinite) {
+	(function() {
 		'use strict';
 		
 		/**
@@ -45,7 +45,7 @@ try {
 
 			return result;
 		};
-	})(window.isNaN, window.isFinite);
+	})();
 }catch(e) {
 	console.error(e);
 }
