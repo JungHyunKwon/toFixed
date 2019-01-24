@@ -7,12 +7,12 @@ try {
 		'use strict';
 		
 		/**
-		 * @name 정수 확인
+		 * @name 숫자 확인
 		 * @since 2017-12-06
 		 * @param {*} value
 		 * @return {boolean}
 		 */
-		function _isInt(value) {
+		function _isNumber(value) {
 			return typeof value === 'number' && !isNaN(value) && isFinite(value);
 		}
 
@@ -26,12 +26,12 @@ try {
 		window.toFixed = function(value, decimal) {
 			var result = NaN;
 			
-			//값이 정수일 때
-			if(_isInt(value)) {
+			//값이 숫자일 때
+			if(_isNumber(value)) {
 				result = value;
 				
-				//소수가 정수일 때
-				if(_isInt(decimal)) {
+				//소수가 숫자일 때
+				if(_isNumber(decimal)) {
 					var splitValue = value.toString().split('.'),
 						splitValue1 = splitValue[1];
 					
