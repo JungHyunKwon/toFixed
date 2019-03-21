@@ -12,7 +12,7 @@ try {
 		 * @param {*} value
 		 * @return {boolean}
 		 */
-		function _isNumber(value) {
+		function _isNumeric(value) {
 			return typeof value === 'number' && !isNaN(value) && isFinite(value);
 		}
 
@@ -27,11 +27,11 @@ try {
 			var result = NaN;
 			
 			//값이 숫자일 때
-			if(_isNumber(value)) {
+			if(_isNumeric(value)) {
 				result = value;
 				
 				//소수가 숫자일 때
-				if(_isNumber(decimal)) {
+				if(_isNumeric(decimal)) {
 					var splitValue = value.toString().split('.'),
 						splitValue1 = splitValue[1];
 					
