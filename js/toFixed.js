@@ -11,7 +11,7 @@
 	 * @param {*} value
 	 * @return {boolean}
 	 */
-	function _isNumeric(value) {
+	function isNumeric(value) {
 		return typeof value === 'number' && !isNaN(value) && isFinite(value);
 	}
 
@@ -24,19 +24,20 @@
 	 */
 	window.toFixed = function(value, decimal) {
 		var result = NaN;
-		
-		//값이 숫자일 때
-		if(_isNumeric(value)) {
+
+		//숫자일 때
+		if(isNumeric(value)) {
 			result = value;
-			
-			//소수가 숫자일 때
-			if(_isNumeric(decimal)) {
-				var split = value.toString().split('.'),
-					firstSplit = split[1];
+
+			//숫자일 때
+			if(isNumeric(decimal)) {
+				var split = result.toString().split('.'),
+					secondSplit = split[1];
 				
 				//소수점이 있을 때
-				if(firstSplit) {
-					split[1] = firstSplit.substring(0, decimal);
+				if(secondSplit) {
+					split[1] = secondSplit.substring(0, decimal);
+
 					result = parseFloat(split.join('.'));
 				}
 			}
